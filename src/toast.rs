@@ -1,4 +1,4 @@
-#[cfg(target_os = "windows")]
+#[cfg(target_os = "linux")]
 use notify_rust::Notification;
 
 use rodio::{source::Source, Decoder, OutputStream};
