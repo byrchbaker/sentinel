@@ -8,5 +8,7 @@ edition = "2021"
 [dependencies]
 notify-rust = "4"
 rodio = "0.17.1"
-winrt-toast = "0.1.0"
+
+[target.'cfg(windows)'.dependencies]
+winrt-toast = "0.1.1"
 winrt-notification = "0.5.1"
