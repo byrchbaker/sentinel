@@ -1,14 +1,16 @@
+#[cfg(target_os = "windows")]
 use notify_rust::Notification;
+
 use rodio::{source::Source, Decoder, OutputStream};
 use std::fs::File;
 use std::io::BufReader;
 
 #[cfg(target_os = "windows")]
-mod win_imports {
-    use std::path::Path;
-    use winrt_notification::{Duration, Toast};
-    use winrt_toast::register;
-}
+use std::path::Path;
+#[cfg(target_os = "windows")]
+use winrt_notification::{Duration, Toast};
+#[cfg(target_os = "windows")]
+use winrt_toast::register;
 
 #[cfg(target_os = "linux")]
 pub fn toast(category: &str) {
